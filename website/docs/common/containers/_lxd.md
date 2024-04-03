@@ -62,7 +62,7 @@ Generating a client certificate. This may take a minute...
 +------+-------+------+------+------+-----------+
 ```
 
-This is the first time the `lxc` client tool communicates with the `lxd` daemon and let's the user know that it automatically generates a client certificate for secure connections with the back-end. Finally, the command outputs a list of available containers, which is empty at the moment since we did not create any yet.
+This is the first time the `lxc` client tool communicates with the `lxd` daemon and lets the user know that it automatically generates a client certificate for secure connections with the back-end. Finally, the command outputs a list of available containers, which is empty at the moment since we did not create any yet.
 
 :::note
 The `lxc` tool is part of the `lxd` package, **not** the `lxc` one. It will only communicate with the `lxd` daemon, and will therefore not show any information about containers previously created.

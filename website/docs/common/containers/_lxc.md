@@ -194,7 +194,7 @@ Using this facility, files can be shared easily between containers and the host:
   * From the host `lab-docker`, access the previously created file and edit it.
   * Verify that the changes are also visible from the container.
 
-#### Exercise: Start your own container
+### Exercise: Start your own container
 
 * Start an Ubuntu container starting from the `ubuntu` template named `ct2`;
 * Connect to the `ct2` container. The username and password are `ubuntu`.
