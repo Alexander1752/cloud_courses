@@ -12,13 +12,13 @@ import gif from './assets/gekko-cantrefuse.gif';
 
 
 When talking about cybersecurity, people often think about hacking systems or actively fighting hackers.
-However, one of the most important (and often considered to be boring) activities of a cybersecurity expert is to monitor (and search) for IOC (Indicator of Compromise).
+However, one of the most important (and often considered to be boring) activities of a cybersecurity expert is to monitor (and search) for IOCs (Indicators of Compromise).
 These IOCs are, then, used to detect (and prevent) attacks against your infrastructure, services or users.
 
-Usually, you monitor everything that can be monitored (kinda like a Big Brother): from your devices, services to the wild wild Internet.
+Usually, you monitor everything that can be monitored (kinda like a Big Brother): from your devices, services to the wild, wild Internet.
 While your local network is accessible, monitoring the rest of the Internet might be a really tricky task.
-One of the most challenging tasks is to monitor the [dark web](https://blog.talosintelligence.com/what-is-the-dark-web/) since it is usually accessible via TOR.
-This blog post presents some general aspects of how one cybersecurity analyst can use TOR to analyze artefacts that are accessible only on the dark web.
+One of the most challenging tasks is to monitor the [dark web](https://blog.talosintelligence.com/what-is-the-dark-web/) since it is usually only accessible via TOR.
+This blog post presents some general aspects of how a cybersecurity analyst can use TOR to analyze artifacts that can only be found on the dark web.
 
 
 <!-- truncate -->
@@ -108,7 +108,7 @@ systemctl edit --full transmission-daemon.service
 
 
 :::warning
-At the time of writing there is a bug that stops the `transmission-daemon` from starting with the default configuration. When editing the service file with the command above also change `Type=notify` to `Type=simple` if you have issues starting the service.
+At the time of writing, there is a bug that stops the `transmission-daemon` from starting with the default configuration. When editing the service file with the command above also change `Type=notify` to `Type=simple` if you have issues starting the service.
 
 You can [find more details about this issue here](https://askubuntu.com/questions/1527761/transmission-daemon-times-out-when-launched-by-systemd).
 
