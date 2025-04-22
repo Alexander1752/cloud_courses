@@ -26,7 +26,7 @@ Here we have a **Python** script that creates multiple threads, one for each con
 
 ```shell-session
 $ python3 kafka.py
-Consumer 0: {"to": "Steve Jobs", "message": "We will have affordable prices, right?"} (key: None)
+Consumer 0: {"to": "Steve Jobs", "from": "KFYbPZO@gmail.com", "message": "We will have affordable prices, right?"} (key: None)
 SIGINT received. Stopping thread...
 ```
 
@@ -35,8 +35,7 @@ Follow `TODO1` comments and let some events to be produced. What is the result i
 <details>
 <summary><b>Read me after</b></summary>
 Each consumer will get all the events. Sometimes this is what we want, but sometimes this behaviour can lead to duplicating the actions.
-
-An example is the online shop that send events each time an user purchases anything. One email service would want to subscribe to these events to send details to customers. Another service, that generates invoices for businesses, would be a consumer. Both require the same events, not just a subset of them.
+An example is the online shop that send events each time an user purchases something. One email service would want to subscribe to these events to send details to customers. Another service, that generates invoices for businesses, would also be a consumer. Both require the same events, not just a subset of them.
 
 What about a high traffic day that require two invoice services to generate the documentation in time? It would be a disaster to generate and send two invoices for one purchase, right?
 </details>
