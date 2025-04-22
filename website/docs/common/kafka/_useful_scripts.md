@@ -13,7 +13,7 @@ $ cd /opt/kafka/bin
 
 Kafka topics represent logical channels or categories to which records (messages) are published and from which records are consumed. We can view a topic as a directory from our filesystem. Each topic has a name, as each directory, and we can consume (read) from our topic by using its name, as listing the files from the directory.
 
-Each topic is composed of one or more partitions, which are units of parallelism and storage withing a topic. Imagine a Kafka topic as a highway where data (messages) flows like cars. The highway has three lanes, each lane represents a partition of the topic. Cars in a single lane (partition) follow a strict order, but multiple lanes allow more cars to travel at once.
+Each topic is composed of one or more partitions, which are units of parallelism and storage within a topic. Imagine a Kafka topic as a highway where data (messages) flows like cars. The highway has three lanes, each lane represents a partition of the topic. Cars in a single lane (partition) follow a strict order, but multiple lanes allow more cars to travel at once.
 
 ![Schema](./assets/kafka.svg#light)
 
@@ -86,5 +86,5 @@ OBS: some of them will go to the first consumer and some to the second one
 As we were able to see in the above section, more partitions mean higher parallelism. We want to increase the number of partitions from 3 to 5 using the following script:
 
 ```shell-session
-$ ./kafka-topics.sh --alter --topic cookies --partitions 5 --bootstrap-server localhost:9092
+$ ./kafka-topics.sh --alter --topic post.office --partitions 5 --bootstrap-server localhost:9092
 ```

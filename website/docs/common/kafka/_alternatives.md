@@ -4,10 +4,10 @@ Some of the most commonly used Kafka alternatives are **RabbitMQ**, **Redis** an
 
 **RabbitMQ** is a traditional message broker. It's key features are:
 * Supports multiple messaging protocols: includes AMQP, MQTT, STOMP or Pub/Sub
-* User-friendly setup and management: the system is designed for ease of setup, management and usaged
+* User-friendly setup and management: the system is designed to ensure an easier setup and management
 * High Availability (HA) Cluster Support: includes native support for **HA** clusters, ensuring redundancy and fault tolerance to keep the messaging system operational
 * Built-in Monitoring Web UI: a web-based user interface is available by default for real-time monitoring
-* Message prioritization: enables critical messages to be processed first, ensuring more important tasks are handled promptly even during high traffic conditions
+* Message prioritization: critical messages are processed first, ensuring more important tasks to be handled promptly even in high traffic conditions
 
 Why Kafka might be better:
 * Lower throughput compared to Kafka: performance may not match Kafka's copabilities, especially in high-throughput scenarios
