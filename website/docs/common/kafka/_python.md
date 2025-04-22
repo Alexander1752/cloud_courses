@@ -22,11 +22,23 @@ The `confluent-kafka` package is available only in the virtual environment, not 
 
 ### Task 1
 
+Here we have a **Python** script that creates multiple threads, one for each consumer/producer. We will always have one producer, which creates an event per second without any output, until the SIGINT (CTRL + C) signal is caught. We have a variable number of consumer threads, which will print everytime they consume something. Example of output:
+
+```shell-session
+$ python3 kafka.py
+Consumer 0: {"to": "Steve Jobs", "message": "We will have affordable prices, right?"} (key: None)
+SIGINT received. Stopping thread...
+```
+
 Follow `TODO1` comments and let some events to be produced. What is the result in each consumer?
 
 <details>
 <summary><b>Read me after</b></summary>
-Each consumer will get all the events. Sometimes this is what we want, but sometimes this behaviour can lead to duplicating the actions
+Each consumer will get all the events. Sometimes this is what we want, but sometimes this behaviour can lead to duplicating the actions.
+
+An example is the online shop that send events each time an user purchases anything. One email service would want to subscribe to these events to send details to customers. Another service, that generates invoices for businesses, would be a consumer. Both require the same events, not just a subset of them.
+
+What about a high traffic day that require two invoice services to generate the documentation in time? It would be a disaster to generate and send two invoices for one purchase, right?
 </details>
 
 ### Task 2

@@ -72,3 +72,5 @@ As we were able to see in the above section, more partitions mean higher paralle
 ```shell-session
 $ ./kafka-topics.sh --alter --topic post.office --partitions 5 --bootstrap-server localhost:9092
 ```
+
+A real-world example would be an online shop. We use kafka to produce some events to another service that sends emails to customers. The entire year, three partitions work just fine, but the Black Friday comes. All the customers will start searching for products and purchasing all kinds of stuff. Three event consumers might not be enough and we don't want to miss or delay sending any purchasing email.
