@@ -25,7 +25,7 @@ The `confluent-kafka` package is available only in the virtual environment, not 
 Here we have a **Python** script that creates multiple threads, one for each consumer/producer. We will always have one producer, which creates an event per second without any output, until the SIGINT (CTRL + C) signal is caught. We have a variable number of consumer threads, which will print everytime they consume something. Example of output:
 
 ```shell-session
-$ python3 kafka.py
+$ python3.10 kafka.py
 Consumer 0: {"to": "Steve Jobs", "from": "KFYbPZO@gmail.com", "message": "We will have affordable prices, right?"} (key: None)
 SIGINT received. Stopping thread...
 ```
