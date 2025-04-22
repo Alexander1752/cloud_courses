@@ -65,22 +65,6 @@ As we can see, the script will lock our terminal waiting for events, but the fir
 If we go on the **Messages** tab, we will see with a high chance that the second message is produces on other partition than the first one. That is a result of Kafka's internal routing system. Kafka will try to send messages on different partitions to increase the parallelism when we have multiple consumers.
 :::
 
-### Exercise
-
-1.
-TODO: start one consumer, send some messages
-TODO: start a second consumer
-TODO: wait a bit
-TODO: send some messages
-OBS: both consumers get the messages
-
-2.
-TODO: start one consumer with a group id, send some messages
-TODO: start a second consumer with the same group id
-TODO: wait a bit
-TODO: send some messages
-OBS: some of them will go to the first consumer and some to the second one
-
 ### Updating the number of partitions
 
 As we were able to see in the above section, more partitions mean higher parallelism. We want to increase the number of partitions from 3 to 5 using the following script:
