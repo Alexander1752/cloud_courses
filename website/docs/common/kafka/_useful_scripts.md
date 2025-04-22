@@ -41,7 +41,7 @@ $ ./kafka-topics.sh --bootstrap-server localhost:19092 --delete --topic post.off
 
 ### Produce events on a topic
 
-The following instruction will **produce** an event on the **post.office** topic.
+The following command will **produce** an event on the **post.office** topic.
 
 ```shell-session
 $ echo '{"event": "new_envelope", "to": "Alan Turing", "message": "You are my role model"}' | ./kafka-console-producer.sh --bootstrap-server localhost:19092 --topic post.office
