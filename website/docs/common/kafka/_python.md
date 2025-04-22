@@ -59,4 +59,14 @@ Follow `TODO3` comments and let some events to be produces. What is the result i
 <summary><b>Read me after</b></summary>
 Up until this moment, we sent events that had a value, but without a key.
 When we send an event with a key, **Kafka** makes a hash of the key and assigns it to a partition. From that moment, all the events containing that key hash will be routed to the same partition.
+
+You can also check the `kafka-ui` dashboard.
+
+:::note
+We are creating a small amount of events compared to what Kafka can handle. There is a chance that some consumers will not get events.
+
+Kafka **does not guarantee** that events with different keys will be sent on different partitions.
+
+Kafka **guarantees** that events with the same key will also get on the same partition.
+:::
 </details>
