@@ -20,6 +20,8 @@ Make sure your prompt contains the `(venv)` message, as the following example:
 The `confluent-kafka` package is available only in the virtual environment, not on the machine.
 :::
 
+For more in-depth details about `confluent-kafka`, [check the official documentation](https://docs.confluent.io/platform/current/clients/confluent-kafka-python/html/index.html).
+
 ### Task 1
 
 Here we have a **Python** script that creates multiple threads, one for each consumer/producer. We will always have one producer, which creates an event per second without any output, until the SIGINT (CTRL + C) signal is caught. We have a variable number of consumer threads, which will print everytime they consume something. Example of output:

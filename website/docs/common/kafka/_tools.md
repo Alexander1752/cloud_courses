@@ -9,7 +9,7 @@ In this lab, we'll use two docker containers: the kafka broker and a third-party
 
 
 :::info
-**kafka-ui** is a web application, configured to run on `localhost:8080`.
+**kafka-ui** is a web application, already configured in your VM to run on `localhost:8080`.
 
 There are two options for connecting to the Argo CD user interface: **SSH tunneling** or **Chrome Remote Desktop**.
 :::
