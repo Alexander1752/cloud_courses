@@ -30,7 +30,7 @@ We will be running the `nginx` container using content from on our host system.
 The command to do this from the `~/lab-containers-part-2` directory is:
 
 ```console
-docker run --name better-nginx -v $PWD/nginx-website:/usr/share/nginx/html:ro -d nginx
+docker run --name better-nginx -v "$PWD"/nginx-website:/usr/share/nginx/html:ro -d nginx
 ```
 
 The `nginx-website` directory is mounted to the `/usr/share/nginx/html` directory.
