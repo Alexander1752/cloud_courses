@@ -2,7 +2,7 @@
 
 #### Deploying Grafana
 
-Deploy Grafana using Helm, following the instructions from here: https://docs.bitnami.com/kubernetes/infrastructure/grafana/get-started/install/
+Deploy Grafana using Helm, following the instructions from here: https://github.com/grafana/helm-charts/blob/main/charts/grafana/README.md
 
 :::danger
 **Attention:** Make sure to deploy the helm chart to the **monitoring** namespace.
