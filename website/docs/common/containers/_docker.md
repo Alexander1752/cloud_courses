@@ -218,7 +218,7 @@ We noticed in the output that we created the `test-net` network. We did this bec
 
 We can connect using the Firefox browser to the virtual machine on port `8000` to configure the WordPress server.
 
-#### Exercise: Running commands in the container
+### Exercise: Running commands in the container
 
 Start a container that hosts the NextCloud file sharing service. To connect to the NextCloud service, you need to expose the HTTP server running in the virtual machine. To do this, follow the example above. The container image name is `nextcloud`.
 
@@ -306,7 +306,7 @@ Removing student_db_1        ... done
 Removing network student_default
 ```
 
-#### Exercise: Automation using Docker Compose
+### Exercise: Automation using Docker Compose
 
 Write a `docker-compose.yaml` file that will automatically start the `nextcloud` container when running the `docker-compose up` command.
 
@@ -397,7 +397,7 @@ Note that when we run the `docker-compose down` command, the volume defined in` 
 In order not to delete the volumes from the recipe, we need to run the `docker-compose stop` command to stop the containers defined in the YAML file.
 :::
 
-#### Exercise: Mount a persistent volume in the container
+### Exercise: Mount a persistent volume in the container
 
 Start a container from the `nextcloud` image to which you attach a volume called` nextcloud-vol` to `/var/www/html`.
 Restart the container and check that the configurations made when starting the container have been saved.
