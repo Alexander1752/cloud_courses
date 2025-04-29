@@ -3,6 +3,7 @@ image: node:lts-alpine
 stages:
   - test
   - deploy
+  - docker
 
 cache:
   key: modules
@@ -10,7 +11,7 @@ cache:
     - website/node_modules/
 
 variables:
-  URL: 'https://cloud-courses.upb.ro'
+  URL: 'https://cloud-courses.local'
   BASE_URL: '/'
 
 test:
@@ -40,5 +41,30 @@ pages:
   artifacts:
     paths:
     - public
+    expire_in: 1 hour 
   rules:
     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+
+dockerize_and_push:
+  image: docker:latest
+  stage: docker
+  services:
+    - name: docker:dind
+      alias: docker
+  variables:
+    IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_TLS_CERTDIR: ""  # Disable TLS
+    DOCKER_DRIVER: overlay2
+  before_script:
+    - docker info
+    - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin $CI_REGISTRY
+  script:
+    - echo "Creating Dockerfile..."
+    - |
+      cat <<EOF > Dockerfile
+      FROM nginx:latest
+      COPY build/ /usr/share/nginx/html
+      EOF
+    - docker build -t $IMAGE_TAG .
+    - docker push $IMAGE_TAG
